@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <title>Bài tập 2</title>
+  </head>
+  <body>
+    <h1>Khảo sát đánh giá giảng viên</h1>
+    <form id="infoForm">
+      <label for="TenMonHoc">Tên môn học:</label>
+      <input
+        type="text"
+        id="TenMonHoc"
+        name="TenMonHoc"
+        placeholder="Lập trình web và ứng dụng"
+      />
+      <br />
+      <br />
+      <label for="TenGiangVien">Tên Giảng Viên:</label>
+      <input
+        type="text"
+        id="TenGiangVien"
+        name="TenGiangVien"
+        placeholder="Nguyễn Minh Nhựt"
+      />
+      <br />
+      <br />
+      <label for="HotenSinhVien">Họ tên sinh viên:</label>
+      <input
+        type="text"
+        id="HotenSinhVien"
+        name="HotenSinhVien"
+        placeholder="Lê Bá Vinh"
+      />
+      <br />
+      <br />
+      <label for="date">Ngày giờ gửi form:</label>
+      <span id="date"></span> <br /><br />
+    </form>
+    <table class="table_rating" border="1">
+      <tr>
+        <td>Tiêu chí</td>
+        <td>1 (Rất kém)</td>
+        <td>2 (Kém)</td>
+        <td>3 (Trung bình)</td>
+        <td>4 (Khá)</td>
+        <td>5 (Tốt)</td>
+      </tr>
+      <tr>
+        <td>Khả năng truyền đạt</td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_truyen_dat"
+            id="kh_nang_truyen_dat_1"
+            value="1"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_truyen_dat"
+            id="kh_nang_truyen_dat_2"
+            value="2"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_truyen_dat"
+            id="kh_nang_truyen_dat_3"
+            value="3"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_truyen_dat"
+            id="kh_nang_truyen_dat_4"
+            value="4"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_truyen_dat"
+            id="kh_nang_truyen_dat_5"
+            value="5"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Thái độ giảng viên</td>
+        <td>
+          <input
+            type="radio"
+            name="thai_do_giang_vien"
+            id="thai_do_giang_vien_1"
+            value="1"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="thai_do_giang_vien"
+            id="thai_do_giang_vien_2"
+            value="2"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="thai_do_giang_vien"
+            id="thai_do_giang_vien_3"
+            value="3"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="thai_do_giang_vien"
+            id="thai_do_giang_vien_4"
+            value="4"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="thai_do_giang_vien"
+            id="thai_do_giang_vien_5"
+            value="5"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Sự tương tác với sinh viên</td>
+        <td>
+          <input
+            type="radio"
+            name="su_tuong_tac_voi_sinh_vien"
+            id="su_tuong_tac_voi_sinh_vien_1"
+            value="1"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="su_tuong_tac_voi_sinh_vien"
+            id="su_tuong_tac_voi_sinh_vien_2"
+            value="2"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="su_tuong_tac_voi_sinh_vien"
+            id="su_tuong_tac_voi_sinh_vien_3"
+            value="3"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="su_tuong_tac_voi_sinh_vien"
+            id="su_tuong_tac_voi_sinh_vien_4"
+            value="4"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="su_tuong_tac_voi_sinh_vien"
+            id="su_tuong_tac_voi_sinh_vien_5"
+            value="5"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Kiến thức chuyên môn</td>
+        <td>
+          <input
+            type="radio"
+            name="kien_thuc_chuyen_mon"
+            id="kien_thuc_chuyen_mon_1"
+            value="1"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kien_thuc_chuyen_mon"
+            id="kien_thuc_chuyen_mon_2"
+            value="2"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kien_thuc_chuyen_mon"
+            id="kien_thuc_chuyen_mon_3"
+            value="3"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kien_thuc_chuyen_mon"
+            id="kien_thuc_chuyen_mon_4"
+            value="4"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kien_thuc_chuyen_mon"
+            id="kien_thuc_chuyen_mon_5"
+            value="5"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Tổ chức bài giảng</td>
+        <td>
+          <input
+            type="radio"
+            name="to_chuc_bai_giang"
+            id="to_chuc_bai_giang_1"
+            value="1"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="to_chuc_bai_giang"
+            id="to_chuc_bai_giang_2"
+            value="2"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="to_chuc_bai_giang"
+            id="to_chuc_bai_giang_3"
+            value="3"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="to_chuc_bai_giang"
+            id="to_chuc_bai_giang_4"
+            value="4"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="to_chuc_bai_giang"
+            id="to_chuc_bai_giang_5"
+            value="5"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Khả năng giải đáp thắc mắc</td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_giai_dap_thac_mac"
+            id="kh_nang_giai_dap_thac_mac_1"
+            value="1"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_giai_dap_thac_mac"
+            id="kh_nang_giai_dap_thac_mac_2"
+            value="2"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_giai_dap_thac_mac"
+            id="kh_nang_giai_dap_thac_mac_3"
+            value="3"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_giai_dap_thac_mac"
+            id="kh_nang_giai_dap_thac_mac_4"
+            value="4"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_giai_dap_thac_mac"
+            id="kh_nang_giai_dap_thac_mac_5"
+            value="5"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Sự nhiệt tình</td>
+        <td>
+          <input
+            type="radio"
+            name="su_nhiet_tinh"
+            id="su_nhiet_tinh_1"
+            value="1"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="su_nhiet_tinh"
+            id="su_nhiet_tinh_2"
+            value="2"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="su_nhiet_tinh"
+            id="su_nhiet_tinh_3"
+            value="3"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="su_nhiet_tinh"
+            id="su_nhiet_tinh_4"
+            value="4"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="su_nhiet_tinh"
+            id="su_nhiet_tinh_5"
+            value="5"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Ứng dụng công nghệ giảng dạy</td>
+        <td>
+          <input
+            type="radio"
+            name="ung_dung_cong_nghe_giang_day"
+            id="ung_dung_cong_nghe_giang_day_1"
+            value="1"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="ung_dung_cong_nghe_giang_day"
+            id="ung_dung_cong_nghe_giang_day_2"
+            value="2"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="ung_dung_cong_nghe_giang_day"
+            id="ung_dung_cong_nghe_giang_day_3"
+            value="3"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="ung_dung_cong_nghe_giang_day"
+            id="ung_dung_cong_nghe_giang_day_4"
+            value="4"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="ung_dung_cong_nghe_giang_day"
+            id="ung_dung_cong_nghe_giang_day_5"
+            value="5"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Khả năng khuyến khích tư duy sáng tạo</td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_khuyen_khich_tu_duy_sang_tao"
+            id="kh_nang_khuyen_khich_tu_duy_sang_tao_1"
+            value="1"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_khuyen_khich_tu_duy_sang_tao"
+            id="kh_nang_khuyen_khich_tu_duy_sang_tao_2"
+            value="2"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_khuyen_khich_tu_duy_sang_tao"
+            id="kh_nang_khuyen_khich_tu_duy_sang_tao_3"
+            value="3"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_khuyen_khich_tu_duy_sang_tao"
+            id="kh_nang_khuyen_khich_tu_duy_sang_tao_4"
+            value="4"
+          />
+        </td>
+        <td>
+          <input
+            type="radio"
+            name="kh_nang_khuyen_khich_tu_duy_sang_tao"
+            id="kh_nang_khuyen_khich_tu_duy_sang_tao_5"
+            value="5"
+          />
+        </td>
+      </tr>
+    </table>
+    <p><b>Trung bình điểm của giảng viên: </b></p>
+    <button type="button" onclick="SubmitForm()">Gửi Khảo Sát</button>
+    <h2>Dữ liệu khảo sát dưới dạng JSON</h2>
+    <pre id="result"></pre>
+  </body>
+</html>
